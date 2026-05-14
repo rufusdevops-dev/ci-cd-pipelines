@@ -7,6 +7,9 @@ EMPTY = 0
 PLAYER_1 = 1
 PLAYER_2 = 2
 
+
+# sdfghjkl;';lhfsdfghm,'
+
 # Initialize board
 board = [[EMPTY] * COLS for _ in range(ROWS)]
 current_player = PLAYER_1
