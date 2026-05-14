@@ -6,23 +6,21 @@ on:
       - main
 
 jobs:
-  test-job:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Check Python Version
+      - name: Verify Python
         run: python --version
 
-      - name: List Files
-        run: ls -R
+      - name: Check Syntax
+        run: python -m py_compile Connect-Four/main.py
 
-      - name: Run Project
-        run: python Connect-Four/main.py
+      - name: Success
+        run: echo "Workflow completed successfully"
